@@ -1,0 +1,14 @@
+Added a new point 8
+Added a new point 9
+Added a STRAIGHT line from 8 to 9
+Added a new point 15
+Added a STRAIGHT line from 15 to 9
+Added a new point 22
+Added a STRAIGHT line from 15 to 22
+Added a STRAIGHT line from 22 to 8
+Added a STRAIGHT line from 7 to 9
+Added a STRAIGHT line from 23 to 14
+Added a STRAIGHT line from 22 to 21
+Added a STRAIGHT line from 28 to 9
+Added a STRAIGHT line from 28 to 21
+Added a STRAIGHT line from 21 to 2

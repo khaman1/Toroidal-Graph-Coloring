@@ -1,0 +1,1523 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     68939,       1514]
+NotebookOptionsPosition[     68310,       1489]
+NotebookOutlinePosition[     68685,       1505]
+CellTagsIndexPosition[     68642,       1502]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"<<", "Combinatorica`"}], "\n", 
+ RowBox[{"<<", "GraphUtilities`"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.6531938674063654`*^9, 3.6531938695564885`*^9}, {
+   3.653193914590064*^9, 3.653193914781075*^9}, 3.653193987534236*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "compat"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Combinatorica Graph and Permutations functionality has \
+been superseded by preloaded functionality. The package now being loaded may \
+conflict with this. Please see the Compatibility Guide for details.\"\>"}]], \
+"Message", "MSG",
+ CellChangeTimes->{
+  3.6531938700825186`*^9, {3.6531939267367587`*^9, 3.6531939379123983`*^9}, 
+   3.6531940916651917`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"g", "=", 
+   RowBox[{"System`Graph", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"1", "\[UndirectedEdge]", "14"}], ",", 
+       RowBox[{"1", "\[UndirectedEdge]", "3"}], ",", 
+       RowBox[{"1", "\[UndirectedEdge]", "4"}], ",", 
+       RowBox[{"1", "\[UndirectedEdge]", "15"}], ",", 
+       RowBox[{"1", "\[UndirectedEdge]", "6"}], ",", 
+       RowBox[{"1", "\[UndirectedEdge]", "7"}], ",", 
+       RowBox[{"2", "\[UndirectedEdge]", "3"}], ",", 
+       RowBox[{"2", "\[UndirectedEdge]", "4"}], ",", 
+       RowBox[{"2", "\[UndirectedEdge]", "18"}], ",", 
+       RowBox[{"2", "\[UndirectedEdge]", "6"}], ",", 
+       RowBox[{"2", "\[UndirectedEdge]", "7"}], ",", 
+       RowBox[{"3", "\[UndirectedEdge]", "25"}], ",", 
+       RowBox[{"3", "\[UndirectedEdge]", "26"}], ",", 
+       RowBox[{"3", "\[UndirectedEdge]", "6"}], ",", 
+       RowBox[{"3", "\[UndirectedEdge]", "7"}], ",", 
+       RowBox[{"4", "\[UndirectedEdge]", "23"}], ",", 
+       RowBox[{"4", "\[UndirectedEdge]", "6"}], ",", 
+       RowBox[{"4", "\[UndirectedEdge]", "24"}], ",", 
+       RowBox[{"5", "\[UndirectedEdge]", "16"}], ",", 
+       RowBox[{"5", "\[UndirectedEdge]", "29"}], ",", 
+       RowBox[{"6", "\[UndirectedEdge]", "7"}], ",", 
+       RowBox[{"14", "\[UndirectedEdge]", "17"}], ",", 
+       RowBox[{"17", "\[UndirectedEdge]", "2"}], ",", 
+       RowBox[{"15", "\[UndirectedEdge]", "5"}], ",", 
+       RowBox[{"18", "\[UndirectedEdge]", "5"}], ",", 
+       RowBox[{"25", "\[UndirectedEdge]", "27"}], ",", 
+       RowBox[{"27", "\[UndirectedEdge]", "22"}], ",", 
+       RowBox[{"22", "\[UndirectedEdge]", "4"}], ",", 
+       RowBox[{"26", "\[UndirectedEdge]", "10"}], ",", 
+       RowBox[{"10", "\[UndirectedEdge]", "5"}], ",", 
+       RowBox[{"23", "\[UndirectedEdge]", "11"}], ",", 
+       RowBox[{"11", "\[UndirectedEdge]", "28"}], ",", 
+       RowBox[{"28", "\[UndirectedEdge]", "5"}], ",", 
+       RowBox[{"24", "\[UndirectedEdge]", "12"}], ",", 
+       RowBox[{"12", "\[UndirectedEdge]", "19"}], ",", 
+       RowBox[{"19", "\[UndirectedEdge]", "7"}], ",", 
+       RowBox[{"16", "\[UndirectedEdge]", "6"}], ",", 
+       RowBox[{"29", "\[UndirectedEdge]", "20"}], ",", 
+       RowBox[{"20", "\[UndirectedEdge]", "7"}], ",", 
+       RowBox[{"8", "\[UndirectedEdge]", "12"}], ",", 
+       RowBox[{"9", "\[UndirectedEdge]", "16"}], ",", 
+       RowBox[{"8", "\[UndirectedEdge]", "19"}], ",", 
+       RowBox[{"21", "\[UndirectedEdge]", "22"}], ",", 
+       RowBox[{"21", "\[UndirectedEdge]", "25"}], ",", 
+       RowBox[{"21", "\[UndirectedEdge]", "27"}], ",", 
+       RowBox[{"12", "\[UndirectedEdge]", "11"}], ",", 
+       RowBox[{"11", "\[UndirectedEdge]", "30"}], ",", 
+       RowBox[{"30", "\[UndirectedEdge]", "10"}], ",", 
+       RowBox[{"10", "\[UndirectedEdge]", "9"}], ",", 
+       RowBox[{"16", "\[UndirectedEdge]", "15"}], ",", 
+       RowBox[{"15", "\[UndirectedEdge]", "14"}], ",", 
+       RowBox[{"14", "\[UndirectedEdge]", "13"}], ",", 
+       RowBox[{"19", "\[UndirectedEdge]", "20"}], ",", 
+       RowBox[{"20", "\[UndirectedEdge]", "18"}], ",", 
+       RowBox[{"18", "\[UndirectedEdge]", "17"}], ",", 
+       RowBox[{"17", "\[UndirectedEdge]", "13"}], ",", 
+       RowBox[{"22", "\[UndirectedEdge]", "23"}], ",", 
+       RowBox[{"23", "\[UndirectedEdge]", "24"}], ",", 
+       RowBox[{"24", "\[UndirectedEdge]", "8"}], ",", 
+       RowBox[{"25", "\[UndirectedEdge]", "26"}], ",", 
+       RowBox[{"26", "\[UndirectedEdge]", "9"}], ",", 
+       RowBox[{"27", "\[UndirectedEdge]", "30"}], ",", 
+       RowBox[{"30", "\[UndirectedEdge]", "28"}], ",", 
+       RowBox[{"28", "\[UndirectedEdge]", "29"}], ",", 
+       RowBox[{"29", "\[UndirectedEdge]", "18"}]}], "}"}], ",", 
+     RowBox[{"VertexLabels", "\[Rule]", "\"\<Name\>\""}], ",", 
+     RowBox[{"VertexSize", "\[Rule]", "0.4"}], ",", 
+     RowBox[{"VertexLabelStyle", "\[Rule]", 
+      RowBox[{"Directive", "[", 
+       RowBox[{"Black", ",", "20"}], "]"}]}], ",", 
+     RowBox[{"EdgeStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Thickness", "[", "0.004", "]"}], ",", "Black"}], "}"}], 
+       "}"}]}]}], "]"}]}], "\n", "\n"}], "\n", 
+ RowBox[{"GColoredList", "=", 
+  RowBox[{"MinimumVertexColoring", "@", 
+   RowBox[{"ToCombinatoricaGraph", "[", "g", "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"GColored", "=", 
+  RowBox[{"SetProperty", "[", 
+   RowBox[{"g", ",", 
+    RowBox[{"System`VertexStyle", "\[Rule]", 
+     RowBox[{"Thread", "[", 
+      RowBox[{
+       RowBox[{"System`VertexList", "[", "g", "]"}], "\[Rule]", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"ColorData", "[", "97", "]"}], "/@", "GColoredList"}], 
+        ")"}]}], "]"}]}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Max", "[", "GColoredList", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"VertexList", "[", "GColored", "]"}]}], "Input",
+ CellChangeTimes->{{3.653193847004198*^9, 3.653193924277618*^9}, {
+   3.653193988807309*^9, 3.653194005333254*^9}, {3.653194053550012*^9, 
+   3.6531940593333426`*^9}, {3.6531941159575815`*^9, 
+   3.6531941161655936`*^9}, {3.653194942577862*^9, 3.6531949458940516`*^9}, 
+   3.6531955120014305`*^9, 3.653195561089238*^9, {3.6531956121111565`*^9, 
+   3.653195636104529*^9}, {3.6531975417155237`*^9, 3.653197557281414*^9}, 
+   3.653197742310997*^9, 3.6531991535417147`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 14, 3, 4, 15, 6, 7, 2, 18, 25, 26, 23, 24, 5, 16, 29, 17, 27, 
+      22, 10, 11, 28, 12, 19, 20, 8, 9, 21, 30, 13}, {
+      Null, {{1, 2}, {1, 3}, {1, 4}, {1, 5}, {1, 6}, {1, 7}, {8, 3}, {8, 4}, {
+       8, 9}, {8, 6}, {8, 7}, {3, 10}, {3, 11}, {3, 6}, {3, 7}, {4, 12}, {4, 
+       6}, {4, 13}, {14, 15}, {14, 16}, {6, 7}, {2, 17}, {17, 8}, {5, 14}, {9,
+        14}, {10, 18}, {18, 19}, {19, 4}, {11, 20}, {20, 14}, {12, 21}, {21, 
+       22}, {22, 14}, {13, 23}, {23, 24}, {24, 7}, {15, 6}, {16, 25}, {25, 
+       7}, {26, 23}, {27, 15}, {26, 24}, {28, 19}, {28, 10}, {28, 18}, {23, 
+       21}, {21, 29}, {29, 20}, {20, 27}, {15, 5}, {5, 2}, {2, 30}, {24, 
+       25}, {25, 9}, {9, 17}, {17, 30}, {19, 12}, {12, 13}, {13, 26}, {10, 
+       11}, {11, 27}, {18, 29}, {29, 22}, {22, 16}, {16, 9}}}, {
+      VertexLabels -> {"Name"}, VertexLabelStyle -> {
+         Directive[
+          GrayLevel[0], 20]}, VertexSize -> {0.4}}]]}, 
+    TagBox[GraphicsGroupBox[{
+       {Hue[0.6, 0.7, 0.5], Opacity[0.7], 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.926993366974525, 1.994752785611461}, {4.315924716344164,
+           2.0023152771027575`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.926993366974525, 1.994752785611461}, {
+          2.1175395258584695`, 1.4341482224660353`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.926993366974525, 1.994752785611461}, {1.494448233557502,
+           2.3351026618675457`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.926993366974525, 1.994752785611461}, {3.767351920003291,
+           1.4101131735648544`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.926993366974525, 1.994752785611461}, {
+          2.4474123074301057`, 1.8410826223396208`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.926993366974525, 1.994752785611461}, {2.352763389108506,
+           2.731132700621628}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{4.315924716344164, 2.0023152771027575`}, {
+          3.767351920003291, 1.4101131735648544`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{4.315924716344164, 2.0023152771027575`}, {
+          4.196788190599051, 2.5927787530715074`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{4.315924716344164, 2.0023152771027575`}, {
+          5.1271647640036075`, 2.421306890563258}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.1175395258584695`, 1.4341482224660353`}, {
+          2.4474123074301057`, 1.8410826223396208`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.1175395258584695`, 1.4341482224660353`}, {
+          2.352763389108506, 2.731132700621628}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.1175395258584695`, 1.4341482224660353`}, {
+          2.8053675173120194`, 2.365188728637352}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.1175395258584695`, 1.4341482224660353`}, {
+          1.0411347701090115`, 0.529972667851258}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.1175395258584695`, 1.4341482224660353`}, {
+          1.8934203392079358`, 0.2568987386189834}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.494448233557502, 2.3351026618675457`}, {
+          2.4474123074301057`, 1.8410826223396208`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.494448233557502, 2.3351026618675457`}, {
+          2.8053675173120194`, 2.365188728637352}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.494448233557502, 2.3351026618675457`}, {
+          0.3971257594089659, 2.5266032963837026`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.494448233557502, 2.3351026618675457`}, {
+          0.6348176949204551, 3.346034971817714}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.494448233557502, 2.3351026618675457`}, {
+          0.3045883034754129, 1.6241508349997444`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.767351920003291, 1.4101131735648544`}, {
+          3.013357057155183, 1.6841328767023163`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.767351920003291, 1.4101131735648544`}, {
+          3.1590993862449572`, 0.876903498175051}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.4474123074301057`, 1.8410826223396208`}, {
+          2.352763389108506, 2.731132700621628}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.4474123074301057`, 1.8410826223396208`}, {
+          2.8053675173120194`, 2.365188728637352}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.4474123074301057`, 1.8410826223396208`}, {
+          3.1590993862449572`, 0.876903498175051}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.352763389108506, 2.731132700621628}, {
+          2.8053675173120194`, 2.365188728637352}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.352763389108506, 2.731132700621628}, {
+          1.7592805470100945`, 3.885645366972267}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.352763389108506, 2.731132700621628}, {2.750023459178186,
+           3.5192808793908155`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.8053675173120194`, 2.365188728637352}, {
+          3.4536817879425112`, 2.7779043111266812`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.8053675173120194`, 2.365188728637352}, {
+          4.196788190599051, 2.5927787530715074`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.4536817879425112`, 2.7779043111266812`}, {
+          3.013357057155183, 1.6841328767023163`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.4536817879425112`, 2.7779043111266812`}, {
+          2.927762612101994, 2.7760636553869777`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.4536817879425112`, 2.7779043111266812`}, {
+          4.196788190599051, 2.5927787530715074`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.4536817879425112`, 2.7779043111266812`}, {
+          2.750023459178186, 3.5192808793908155`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.0411347701090115`, 0.529972667851258}, {
+          1.8934203392079358`, 0.2568987386189834}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.0411347701090115`, 0.529972667851258}, {
+          0.37099433607600485`, 0.8817351802393023}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.0411347701090115`, 0.529972667851258}, {0., 
+          0.6101444750474248}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.8934203392079358`, 0.2568987386189834}, {
+          2.224114866921944, 0.7222647075105737}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.8934203392079358`, 0.2568987386189834}, {
+          2.67652717731048, 0.}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.3971257594089659, 2.5266032963837026`}, {
+          0.6348176949204551, 3.346034971817714}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.3971257594089659, 2.5266032963837026`}, {
+          0.3045883034754129, 1.6241508349997444`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.3971257594089659, 2.5266032963837026`}, {
+          0.951634486176361, 2.620199998570444}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.6348176949204551, 3.346034971817714}, {
+          0.8409089769234872, 3.795783443422045}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.6348176949204551, 3.346034971817714}, {
+          0.8198730897159405, 4.316228949625533}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.013357057155183, 1.6841328767023163`}, {
+          3.1590993862449572`, 0.876903498175051}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.013357057155183, 1.6841328767023163`}, {
+          2.927762612101994, 2.7760636553869777`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.013357057155183, 1.6841328767023163`}, {
+          2.224114866921944, 0.7222647075105737}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.013357057155183, 1.6841328767023163`}, {
+          1.957246265136673, 2.184331659145226}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.1590993862449572`, 0.876903498175051}, {
+          2.67652717731048, 0.}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.927762612101994, 2.7760636553869777`}, {
+          1.957246265136673, 2.184331659145226}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.927762612101994, 2.7760636553869777`}, {
+          2.750023459178186, 3.5192808793908155`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{4.196788190599051, 2.5927787530715074`}, {
+          5.1271647640036075`, 2.421306890563258}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.37099433607600485`, 0.8817351802393023}, {
+          0.3045883034754129, 1.6241508349997444`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.37099433607600485`, 0.8817351802393023}, {0., 
+          0.6101444750474248}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.37099433607600485`, 0.8817351802393023}, {
+          1.2082122950084724`, 1.4653579553912395`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.3045883034754129, 1.6241508349997444`}, {0., 
+          0.6101444750474248}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.224114866921944, 0.7222647075105737}, {2.67652717731048,
+           0.}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.224114866921944, 0.7222647075105737}, {
+          1.2082122950084724`, 1.4653579553912395`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.951634486176361, 2.620199998570444}, {1.957246265136673,
+           2.184331659145226}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.951634486176361, 2.620199998570444}, {
+          0.8409089769234872, 3.795783443422045}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.951634486176361, 2.620199998570444}, {
+          1.2082122950084724`, 1.4653579553912395`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.957246265136673, 2.184331659145226}, {
+          1.2082122950084724`, 1.4653579553912395`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.8409089769234872, 3.795783443422045}, {
+          1.7592805470100945`, 3.885645366972267}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.8409089769234872, 3.795783443422045}, {
+          0.8198730897159405, 4.316228949625533}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.7592805470100945`, 3.885645366972267}, {
+          2.750023459178186, 3.5192808793908155`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.7592805470100945`, 3.885645366972267}, {
+          0.8198730897159405, 4.316228949625533}}, 0.043770515897121234`]}}, 
+       {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
+        0.7]}], {
+         DiskBox[{2.926993366974525, 1.994752785611461}, 0.06448051327101735],
+          InsetBox[
+          StyleBox["1",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {2.9914738802455423`, 2.0592332988824786`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{4.315924716344164, 2.0023152771027575`}, 
+          0.06448051327101735], InsetBox[
+          StyleBox["14",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {4.380405229615182, 2.066795790373775}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{2.1175395258584695`, 1.4341482224660353`}, 
+          0.06448051327101735], InsetBox[
+          StyleBox["3",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {2.182020039129487, 1.4986287357370527`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{1.494448233557502, 2.3351026618675457`}, 
+          0.06448051327101735], InsetBox[
+          StyleBox["4",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {1.5589287468285193`, 2.399583175138563}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{3.767351920003291, 1.4101131735648544`}, 
+          0.06448051327101735], InsetBox[
+          StyleBox["15",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {3.8318324332743083`, 1.4745936868358718`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{2.4474123074301057`, 1.8410826223396208`}, 
+          0.06448051327101735], InsetBox[
+          StyleBox["6",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {2.511892820701123, 1.9055631356106382`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{2.352763389108506, 2.731132700621628}, 0.06448051327101735],
+          InsetBox[
+          StyleBox["7",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {2.417243902379523, 2.7956132138926453`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{2.8053675173120194`, 2.365188728637352}, 
+          0.06448051327101735], InsetBox[
+          StyleBox["2",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {2.8698480305830367`, 2.4296692419083694`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{3.4536817879425112`, 2.7779043111266812`}, 
+          0.06448051327101735], InsetBox[
+          StyleBox["18",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {3.5181623012135286`, 2.8423848243976986`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{1.0411347701090115`, 0.529972667851258}, 
+          0.06448051327101735], InsetBox[
+          StyleBox["25",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {1.1056152833800288`, 0.5944531811222753}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{1.8934203392079358`, 0.2568987386189834}, 
+          0.06448051327101735], InsetBox[
+          StyleBox["26",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {1.9579008524789532`, 0.3213792518900007}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0.3971257594089659, 2.5266032963837026`}, 
+          0.06448051327101735], InsetBox[
+          StyleBox["23",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {0.4616062726799832, 2.59108380965472}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0.6348176949204551, 3.346034971817714}, 
+          0.06448051327101735], InsetBox[
+          StyleBox["24",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {0.6992982081914725, 3.410515485088731}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{3.013357057155183, 1.6841328767023163`}, 
+          0.06448051327101735], InsetBox[
+          StyleBox["5",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {3.0778375704262, 1.7486133899733336`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{3.1590993862449572`, 0.876903498175051}, 
+          0.06448051327101735], InsetBox[
+          StyleBox["16",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {3.2235798995159746`, 0.9413840114460683}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{2.927762612101994, 2.7760636553869777`}, 
+          0.06448051327101735], InsetBox[
+          StyleBox["29",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {2.9922431253730113`, 2.840544168657995}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{4.196788190599051, 2.5927787530715074`}, 
+          0.06448051327101735], InsetBox[
+          StyleBox["17",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {4.261268703870068, 2.6572592663425247`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0.37099433607600485`, 0.8817351802393023}, 
+          0.06448051327101735], InsetBox[
+          StyleBox["27",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {0.4354748493470222, 0.9462156935103196}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0.3045883034754129, 1.6241508349997444`}, 
+          0.06448051327101735], InsetBox[
+          StyleBox["22",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {0.3690688167464302, 1.6886313482707618`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{2.224114866921944, 0.7222647075105737}, 
+          0.06448051327101735], InsetBox[
+          StyleBox["10",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {2.2885953801929615`, 0.786745220781591}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0.951634486176361, 2.620199998570444}, 0.06448051327101735],
+          InsetBox[
+          StyleBox["11",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], Offset[{2, 2}, 
+          {1.0161149994473784`, 2.6846805118414614`}], ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{1.957246265136673, 2.184331659145226}, 0.06448051327101735],
+          InsetBox[
+          StyleBox["28",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {2.0217267784076904`, 2.2488121724162435`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0.8409089769234872, 3.795783443422045}, 
+          0.06448051327101735], InsetBox[
+          StyleBox["12",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {0.9053894901945045, 3.8602639566930623`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{1.7592805470100945`, 3.885645366972267}, 
+          0.06448051327101735], InsetBox[
+          StyleBox["19",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {1.8237610602811118`, 3.9501258802432844`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{2.750023459178186, 3.5192808793908155`}, 
+          0.06448051327101735], InsetBox[
+          StyleBox["20",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {2.814503972449203, 3.583761392661833}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0.8198730897159405, 4.316228949625533}, 
+          0.06448051327101735], InsetBox[
+          StyleBox["8",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {0.8843536029869579, 4.38070946289655}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{2.67652717731048, 0.}, 0.06448051327101735], InsetBox[
+          StyleBox["9",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {2.7410076905814975`, 0.06448051327101735}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0., 0.6101444750474248}, 0.06448051327101735], InsetBox[
+          StyleBox["21",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {0.06448051327101735, 0.6746249883184421}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{1.2082122950084724`, 1.4653579553912395`}, 
+          0.06448051327101735], InsetBox[
+          StyleBox["30",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {1.2726928082794897`, 1.5298384686622568`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{5.1271647640036075`, 2.421306890563258}, 
+          0.06448051327101735], InsetBox[
+          StyleBox["13",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {5.191645277274625, 2.4857874038342755`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  FrameTicks->None,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->{842., Automatic}]], "Output",
+ CellChangeTimes->{{3.653193848199267*^9, 3.653193927908826*^9}, 
+   3.6531939896013546`*^9, 3.653194029489636*^9, {3.6531940928952627`*^9, 
+   3.653194116708625*^9}, 3.653194951341363*^9, 3.6531955134355125`*^9, {
+   3.653195628667104*^9, 3.6531956369805794`*^9}, 3.6531967722275114`*^9, {
+   3.6531975437096376`*^9, 3.653197557798444*^9}, 3.653197743442062*^9, 
+   3.653199154705782*^9, 3.653199203416568*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "2", ",", "2", ",", "2", ",", "3", ",", "3", ",", "4", ",", "1", 
+   ",", "3", ",", "1", ",", "3", ",", "3", ",", "1", ",", "2", ",", "1", ",", 
+   "1", ",", "4", ",", "3", ",", "1", ",", "1", ",", "1", ",", "3", ",", "2", 
+   ",", "1", ",", "2", ",", "3", ",", "2", ",", "2", ",", "2", ",", "1"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.653193848199267*^9, 3.653193927908826*^9}, 
+   3.6531939896013546`*^9, 3.653194029489636*^9, {3.6531940928952627`*^9, 
+   3.653194116708625*^9}, 3.653194951341363*^9, 3.6531955134355125`*^9, {
+   3.653195628667104*^9, 3.6531956369805794`*^9}, 3.6531967722275114`*^9, {
+   3.6531975437096376`*^9, 3.653197557798444*^9}, 3.653197743442062*^9, 
+   3.653199154705782*^9, 3.653199203443569*^9}],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 14, 3, 4, 15, 6, 7, 2, 18, 25, 26, 23, 24, 5, 16, 29, 17, 27, 
+      22, 10, 11, 28, 12, 19, 20, 8, 9, 21, 30, 13}, {
+      Null, {{1, 2}, {1, 3}, {1, 4}, {1, 5}, {1, 6}, {1, 7}, {8, 3}, {8, 4}, {
+       8, 9}, {8, 6}, {8, 7}, {3, 10}, {3, 11}, {3, 6}, {3, 7}, {4, 12}, {4, 
+       6}, {4, 13}, {14, 15}, {14, 16}, {6, 7}, {2, 17}, {17, 8}, {5, 14}, {9,
+        14}, {10, 18}, {18, 19}, {19, 4}, {11, 20}, {20, 14}, {12, 21}, {21, 
+       22}, {22, 14}, {13, 23}, {23, 24}, {24, 7}, {15, 6}, {16, 25}, {25, 
+       7}, {26, 23}, {27, 15}, {26, 24}, {28, 19}, {28, 10}, {28, 18}, {23, 
+       21}, {21, 29}, {29, 20}, {20, 27}, {15, 5}, {5, 2}, {2, 30}, {24, 
+       25}, {25, 9}, {9, 17}, {17, 30}, {19, 12}, {12, 13}, {13, 26}, {10, 
+       11}, {11, 27}, {18, 29}, {29, 22}, {22, 16}, {16, 9}}}, {
+      VertexLabels -> {"Name"}, VertexLabelStyle -> {
+         Directive[
+          GrayLevel[0], 20]}, VertexSize -> {0.4}, 
+       VertexStyle -> {
+        18 -> RGBColor[0.560181, 0.691569, 0.194885], 6 -> 
+         RGBColor[0.560181, 0.691569, 0.194885], 22 -> 
+         RGBColor[0.368417, 0.506779, 0.709798], 23 -> 
+         RGBColor[0.560181, 0.691569, 0.194885], 15 -> 
+         RGBColor[0.560181, 0.691569, 0.194885], 1 -> 
+         RGBColor[0.368417, 0.506779, 0.709798], 20 -> 
+         RGBColor[0.880722, 0.611041, 0.142051], 27 -> 
+         RGBColor[0.560181, 0.691569, 0.194885], 9 -> 
+         RGBColor[0.880722, 0.611041, 0.142051], 24 -> 
+         RGBColor[0.368417, 0.506779, 0.709798], 13 -> 
+         RGBColor[0.368417, 0.506779, 0.709798], 29 -> 
+         RGBColor[0.368417, 0.506779, 0.709798], 2 -> 
+         RGBColor[0.368417, 0.506779, 0.709798], 8 -> 
+         RGBColor[0.560181, 0.691569, 0.194885], 21 -> 
+         RGBColor[0.880722, 0.611041, 0.142051], 25 -> 
+         RGBColor[0.368417, 0.506779, 0.709798], 3 -> 
+         RGBColor[0.880722, 0.611041, 0.142051], 30 -> 
+         RGBColor[0.880722, 0.611041, 0.142051], 4 -> 
+         RGBColor[0.880722, 0.611041, 0.142051], 11 -> 
+         RGBColor[0.368417, 0.506779, 0.709798], 26 -> 
+         RGBColor[0.560181, 0.691569, 0.194885], 10 -> 
+         RGBColor[0.368417, 0.506779, 0.709798], 19 -> 
+         RGBColor[0.368417, 0.506779, 0.709798], 7 -> 
+         RGBColor[0.922526, 0.385626, 0.209179], 16 -> 
+         RGBColor[0.368417, 0.506779, 0.709798], 17 -> 
+         RGBColor[0.922526, 0.385626, 0.209179], 28 -> 
+         RGBColor[0.560181, 0.691569, 0.194885], 14 -> 
+         RGBColor[0.880722, 0.611041, 0.142051], 12 -> 
+         RGBColor[0.880722, 0.611041, 0.142051], 5 -> 
+         RGBColor[0.880722, 0.611041, 0.142051]}}]]}, 
+    TagBox[GraphicsGroupBox[{
+       {Hue[0.6, 0.7, 0.5], Opacity[0.7], 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.926993366974525, 1.994752785611461}, {4.315924716344164,
+           2.0023152771027575`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.926993366974525, 1.994752785611461}, {
+          2.1175395258584695`, 1.4341482224660353`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.926993366974525, 1.994752785611461}, {1.494448233557502,
+           2.3351026618675457`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.926993366974525, 1.994752785611461}, {3.767351920003291,
+           1.4101131735648544`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.926993366974525, 1.994752785611461}, {
+          2.4474123074301057`, 1.8410826223396208`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.926993366974525, 1.994752785611461}, {2.352763389108506,
+           2.731132700621628}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{4.315924716344164, 2.0023152771027575`}, {
+          3.767351920003291, 1.4101131735648544`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{4.315924716344164, 2.0023152771027575`}, {
+          4.196788190599051, 2.5927787530715074`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{4.315924716344164, 2.0023152771027575`}, {
+          5.1271647640036075`, 2.421306890563258}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.1175395258584695`, 1.4341482224660353`}, {
+          2.4474123074301057`, 1.8410826223396208`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.1175395258584695`, 1.4341482224660353`}, {
+          2.352763389108506, 2.731132700621628}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.1175395258584695`, 1.4341482224660353`}, {
+          2.8053675173120194`, 2.365188728637352}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.1175395258584695`, 1.4341482224660353`}, {
+          1.0411347701090115`, 0.529972667851258}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.1175395258584695`, 1.4341482224660353`}, {
+          1.8934203392079358`, 0.2568987386189834}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.494448233557502, 2.3351026618675457`}, {
+          2.4474123074301057`, 1.8410826223396208`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.494448233557502, 2.3351026618675457`}, {
+          2.8053675173120194`, 2.365188728637352}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.494448233557502, 2.3351026618675457`}, {
+          0.3971257594089659, 2.5266032963837026`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.494448233557502, 2.3351026618675457`}, {
+          0.6348176949204551, 3.346034971817714}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.494448233557502, 2.3351026618675457`}, {
+          0.3045883034754129, 1.6241508349997444`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.767351920003291, 1.4101131735648544`}, {
+          3.013357057155183, 1.6841328767023163`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.767351920003291, 1.4101131735648544`}, {
+          3.1590993862449572`, 0.876903498175051}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.4474123074301057`, 1.8410826223396208`}, {
+          2.352763389108506, 2.731132700621628}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.4474123074301057`, 1.8410826223396208`}, {
+          2.8053675173120194`, 2.365188728637352}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.4474123074301057`, 1.8410826223396208`}, {
+          3.1590993862449572`, 0.876903498175051}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.352763389108506, 2.731132700621628}, {
+          2.8053675173120194`, 2.365188728637352}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.352763389108506, 2.731132700621628}, {
+          1.7592805470100945`, 3.885645366972267}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.352763389108506, 2.731132700621628}, {2.750023459178186,
+           3.5192808793908155`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.8053675173120194`, 2.365188728637352}, {
+          3.4536817879425112`, 2.7779043111266812`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.8053675173120194`, 2.365188728637352}, {
+          4.196788190599051, 2.5927787530715074`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.4536817879425112`, 2.7779043111266812`}, {
+          3.013357057155183, 1.6841328767023163`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.4536817879425112`, 2.7779043111266812`}, {
+          2.927762612101994, 2.7760636553869777`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.4536817879425112`, 2.7779043111266812`}, {
+          4.196788190599051, 2.5927787530715074`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.4536817879425112`, 2.7779043111266812`}, {
+          2.750023459178186, 3.5192808793908155`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.0411347701090115`, 0.529972667851258}, {
+          1.8934203392079358`, 0.2568987386189834}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.0411347701090115`, 0.529972667851258}, {
+          0.37099433607600485`, 0.8817351802393023}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.0411347701090115`, 0.529972667851258}, {0., 
+          0.6101444750474248}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.8934203392079358`, 0.2568987386189834}, {
+          2.224114866921944, 0.7222647075105737}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.8934203392079358`, 0.2568987386189834}, {
+          2.67652717731048, 0.}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.3971257594089659, 2.5266032963837026`}, {
+          0.6348176949204551, 3.346034971817714}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.3971257594089659, 2.5266032963837026`}, {
+          0.3045883034754129, 1.6241508349997444`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.3971257594089659, 2.5266032963837026`}, {
+          0.951634486176361, 2.620199998570444}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.6348176949204551, 3.346034971817714}, {
+          0.8409089769234872, 3.795783443422045}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.6348176949204551, 3.346034971817714}, {
+          0.8198730897159405, 4.316228949625533}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.013357057155183, 1.6841328767023163`}, {
+          3.1590993862449572`, 0.876903498175051}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.013357057155183, 1.6841328767023163`}, {
+          2.927762612101994, 2.7760636553869777`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.013357057155183, 1.6841328767023163`}, {
+          2.224114866921944, 0.7222647075105737}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.013357057155183, 1.6841328767023163`}, {
+          1.957246265136673, 2.184331659145226}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.1590993862449572`, 0.876903498175051}, {
+          2.67652717731048, 0.}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.927762612101994, 2.7760636553869777`}, {
+          1.957246265136673, 2.184331659145226}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.927762612101994, 2.7760636553869777`}, {
+          2.750023459178186, 3.5192808793908155`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{4.196788190599051, 2.5927787530715074`}, {
+          5.1271647640036075`, 2.421306890563258}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.37099433607600485`, 0.8817351802393023}, {
+          0.3045883034754129, 1.6241508349997444`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.37099433607600485`, 0.8817351802393023}, {0., 
+          0.6101444750474248}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.37099433607600485`, 0.8817351802393023}, {
+          1.2082122950084724`, 1.4653579553912395`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.3045883034754129, 1.6241508349997444`}, {0., 
+          0.6101444750474248}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.224114866921944, 0.7222647075105737}, {2.67652717731048,
+           0.}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2.224114866921944, 0.7222647075105737}, {
+          1.2082122950084724`, 1.4653579553912395`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.951634486176361, 2.620199998570444}, {1.957246265136673,
+           2.184331659145226}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.951634486176361, 2.620199998570444}, {
+          0.8409089769234872, 3.795783443422045}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.951634486176361, 2.620199998570444}, {
+          1.2082122950084724`, 1.4653579553912395`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.957246265136673, 2.184331659145226}, {
+          1.2082122950084724`, 1.4653579553912395`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.8409089769234872, 3.795783443422045}, {
+          1.7592805470100945`, 3.885645366972267}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.8409089769234872, 3.795783443422045}, {
+          0.8198730897159405, 4.316228949625533}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.7592805470100945`, 3.885645366972267}, {
+          2.750023459178186, 3.5192808793908155`}}, 0.043770515897121234`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.7592805470100945`, 3.885645366972267}, {
+          0.8198730897159405, 4.316228949625533}}, 0.043770515897121234`]}}, 
+       {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[0.7]}], {
+         {RGBColor[0.368417, 0.506779, 0.709798], 
+          DiskBox[{2.926993366974525, 1.994752785611461}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["1",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {2.9914738802455423`, 2.0592332988824786`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.880722, 0.611041, 0.142051], 
+          DiskBox[{4.315924716344164, 2.0023152771027575`}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["14",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {4.380405229615182, 2.066795790373775}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.880722, 0.611041, 0.142051], 
+          DiskBox[{2.1175395258584695`, 1.4341482224660353`}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["3",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {2.182020039129487, 1.4986287357370527`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.880722, 0.611041, 0.142051], 
+          DiskBox[{1.494448233557502, 2.3351026618675457`}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["4",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {1.5589287468285193`, 2.399583175138563}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.560181, 0.691569, 0.194885], 
+          DiskBox[{3.767351920003291, 1.4101131735648544`}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["15",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {3.8318324332743083`, 1.4745936868358718`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.560181, 0.691569, 0.194885], 
+          DiskBox[{2.4474123074301057`, 1.8410826223396208`}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["6",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {2.511892820701123, 1.9055631356106382`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.922526, 0.385626, 0.209179], 
+          DiskBox[{2.352763389108506, 2.731132700621628}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["7",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {2.417243902379523, 2.7956132138926453`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.368417, 0.506779, 0.709798], 
+          DiskBox[{2.8053675173120194`, 2.365188728637352}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["2",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {2.8698480305830367`, 2.4296692419083694`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.560181, 0.691569, 0.194885], 
+          DiskBox[{3.4536817879425112`, 2.7779043111266812`}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["18",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {3.5181623012135286`, 2.8423848243976986`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.368417, 0.506779, 0.709798], 
+          DiskBox[{1.0411347701090115`, 0.529972667851258}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["25",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {1.1056152833800288`, 0.5944531811222753}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.560181, 0.691569, 0.194885], 
+          DiskBox[{1.8934203392079358`, 0.2568987386189834}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["26",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {1.9579008524789532`, 0.3213792518900007}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.560181, 0.691569, 0.194885], 
+          DiskBox[{0.3971257594089659, 2.5266032963837026`}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["23",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {0.4616062726799832, 2.59108380965472}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.368417, 0.506779, 0.709798], 
+          DiskBox[{0.6348176949204551, 3.346034971817714}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["24",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {0.6992982081914725, 3.410515485088731}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.880722, 0.611041, 0.142051], 
+          DiskBox[{3.013357057155183, 1.6841328767023163`}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["5",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {3.0778375704262, 1.7486133899733336`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.368417, 0.506779, 0.709798], 
+          DiskBox[{3.1590993862449572`, 0.876903498175051}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["16",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {3.2235798995159746`, 0.9413840114460683}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.368417, 0.506779, 0.709798], 
+          DiskBox[{2.927762612101994, 2.7760636553869777`}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["29",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {2.9922431253730113`, 2.840544168657995}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.922526, 0.385626, 0.209179], 
+          DiskBox[{4.196788190599051, 2.5927787530715074`}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["17",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {4.261268703870068, 2.6572592663425247`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.560181, 0.691569, 0.194885], 
+          DiskBox[{0.37099433607600485`, 0.8817351802393023}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["27",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {0.4354748493470222, 0.9462156935103196}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.368417, 0.506779, 0.709798], 
+          DiskBox[{0.3045883034754129, 1.6241508349997444`}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["22",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {0.3690688167464302, 1.6886313482707618`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.368417, 0.506779, 0.709798], 
+          DiskBox[{2.224114866921944, 0.7222647075105737}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["10",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {2.2885953801929615`, 0.786745220781591}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.368417, 0.506779, 0.709798], 
+          DiskBox[{0.951634486176361, 2.620199998570444}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["11",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {1.0161149994473784`, 2.6846805118414614`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.560181, 0.691569, 0.194885], 
+          DiskBox[{1.957246265136673, 2.184331659145226}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["28",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {2.0217267784076904`, 2.2488121724162435`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.880722, 0.611041, 0.142051], 
+          DiskBox[{0.8409089769234872, 3.795783443422045}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["12",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {0.9053894901945045, 3.8602639566930623`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.368417, 0.506779, 0.709798], 
+          DiskBox[{1.7592805470100945`, 3.885645366972267}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["19",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {1.8237610602811118`, 3.9501258802432844`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.880722, 0.611041, 0.142051], 
+          DiskBox[{2.750023459178186, 3.5192808793908155`}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["20",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {2.814503972449203, 3.583761392661833}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.560181, 0.691569, 0.194885], 
+          DiskBox[{0.8198730897159405, 4.316228949625533}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["8",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {0.8843536029869579, 4.38070946289655}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.880722, 0.611041, 0.142051], 
+          DiskBox[{2.67652717731048, 0.}, 0.06448051327101735]}, InsetBox[
+          StyleBox["9",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {2.7410076905814975`, 0.06448051327101735}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.880722, 0.611041, 0.142051], 
+          DiskBox[{0., 0.6101444750474248}, 0.06448051327101735]}, InsetBox[
+          StyleBox["21",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {0.06448051327101735, 0.6746249883184421}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.880722, 0.611041, 0.142051], 
+          DiskBox[{1.2082122950084724`, 1.4653579553912395`}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["30",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {1.2726928082794897`, 1.5298384686622568`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         {RGBColor[0.368417, 0.506779, 0.709798], 
+          DiskBox[{5.1271647640036075`, 2.421306890563258}, 
+           0.06448051327101735]}, InsetBox[
+          StyleBox["13",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->20,
+           FontColor->GrayLevel[0]], 
+          Offset[{2, 2}, {5.191645277274625, 2.4857874038342755`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  FrameTicks->None,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->{1174.2222222222217`, Automatic}]], "Output",
+ CellChangeTimes->{{3.653193848199267*^9, 3.653193927908826*^9}, 
+   3.6531939896013546`*^9, 3.653194029489636*^9, {3.6531940928952627`*^9, 
+   3.653194116708625*^9}, 3.653194951341363*^9, 3.6531955134355125`*^9, {
+   3.653195628667104*^9, 3.6531956369805794`*^9}, 3.6531967722275114`*^9, {
+   3.6531975437096376`*^9, 3.653197557798444*^9}, 3.653197743442062*^9, 
+   3.653199154705782*^9, 3.6531992034965725`*^9}],
+
+Cell[BoxData["4"], "Output",
+ CellChangeTimes->{{3.653193848199267*^9, 3.653193927908826*^9}, 
+   3.6531939896013546`*^9, 3.653194029489636*^9, {3.6531940928952627`*^9, 
+   3.653194116708625*^9}, 3.653194951341363*^9, 3.6531955134355125`*^9, {
+   3.653195628667104*^9, 3.6531956369805794`*^9}, 3.6531967722275114`*^9, {
+   3.6531975437096376`*^9, 3.653197557798444*^9}, 3.653197743442062*^9, 
+   3.653199154705782*^9, 3.653199203500572*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "14", ",", "3", ",", "4", ",", "15", ",", "6", ",", "7", ",", "2",
+    ",", "18", ",", "25", ",", "26", ",", "23", ",", "24", ",", "5", ",", 
+   "16", ",", "29", ",", "17", ",", "27", ",", "22", ",", "10", ",", "11", 
+   ",", "28", ",", "12", ",", "19", ",", "20", ",", "8", ",", "9", ",", "21", 
+   ",", "30", ",", "13"}], "}"}]], "Output",
+ CellChangeTimes->{{3.653193848199267*^9, 3.653193927908826*^9}, 
+   3.6531939896013546`*^9, 3.653194029489636*^9, {3.6531940928952627`*^9, 
+   3.653194116708625*^9}, 3.653194951341363*^9, 3.6531955134355125`*^9, {
+   3.653195628667104*^9, 3.6531956369805794`*^9}, 3.6531967722275114`*^9, {
+   3.6531975437096376`*^9, 3.653197557798444*^9}, 3.653197743442062*^9, 
+   3.653199154705782*^9, 3.653199203500572*^9}]
+}, Open  ]]
+},
+WindowSize->{1920, 1028},
+WindowMargins->{{Automatic, 1911}, {Automatic, -9}},
+Magnification:>0.9 Inherited,
+FrontEndVersion->"10.2 for Microsoft Windows (64-bit) (July 7, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 268, 4, 70, "Input"],
+Cell[851, 28, 480, 11, 19, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1368, 44, 5347, 105, 190, "Input"],
+Cell[6718, 151, 28100, 617, 660, "Output"],
+Cell[34821, 770, 783, 13, 28, "Output"],
+Cell[35607, 785, 31436, 678, 947, "Output"],
+Cell[67046, 1465, 440, 6, 28, "Output"],
+Cell[67489, 1473, 805, 13, 28, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

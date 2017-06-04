@@ -1,0 +1,34 @@
+Added Point 1!
+Added Point 2!
+Added Point 3!
+Added Point 4!
+Added Point 5!
+Added Point 6!
+Added Point 7!
+
+Connecting Point 1 and Point 2 (STRAIGHT)
+Connecting Point 1 and Point 3 (LEFT&RIGHT)
+Connecting Point 1 and Point 4 (UP&DOWN)
+Connecting Point 1 and Point 5 (STRAIGHT)
+Connecting Point 1 and Point 6 (UP&DOWN)
+Connecting Point 1 and Point 7 (UP&DOWN)
+
+Connecting Point 2 and Point 3 (LEFT&RIGHT)
+Connecting Point 2 and Point 4 (LEFT&RIGHT)
+Connecting Point 2 and Point 5 (STRAIGHT)
+Connecting Point 2 and Point 6 (LEFT&RIGHT)
+Connecting Point 2 and Point 7 (STRAIGHT)
+
+Connecting Point 3 and Point 4 (STRAIGHT)
+Connecting Point 3 and Point 5 (STRAIGHT)
+Connecting Point 3 and Point 6 (UP&DOWN)
+Connecting Point 3 and Point 7 (DOWN(LEFT)...)
+
+Connecting Point 4 and Point 5 (STRAIGHT)
+Connecting Point 4 and Point 6 (STRAIGHT)
+Connecting Point 4 and Point 7 (STRAIGHT)
+
+Connecting Point 5 and Point 6 (UP&DOWN)
+Connecting Point 5 and Point 7 (STRAIGHT)
+
+Connecting Point 6 and Point 7 (LEFT&RIGHT)
